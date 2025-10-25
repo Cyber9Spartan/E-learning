@@ -1,0 +1,11 @@
+# Node
+node_modules/
+# Python
+__pycache__/
+# Rust
+/target
+# Java
+/target
+# Docker
+.env
+*.log

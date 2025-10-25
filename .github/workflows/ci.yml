@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node (frontend/backend gateway)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd frontend && npm ci || true
+          cd ../backend/gateway && npm ci || true
+      - name: Run tests
+        run: echo "✅ Tests placeholder"

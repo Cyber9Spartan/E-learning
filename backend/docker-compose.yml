@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  gateway:
+    build: ./gateway
+    ports:
+      - "4000:4000"
+    depends_on:
+      - auth-service
+      - course-service
+      - ai-service
+      - analytics-service
+      - rust-service
+
+  auth-service:
+    build: ./services/auth-service
+    ports:
+      - "4001:4001"
+
+  course-service:
+    build: ./services/course-service
+    ports:
+      - "7001:7001"
+
+  ai-service:
+    build: ./services/ai-service
+    ports:
+      - "5001:5001"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+
+  analytics-service:
+    build: ./services/analytics-service
+    ports:
+      - "6001:6001"
+
+  rust-service:
+    build: ./services/rust-service
+    ports:
+      - "8001:8001"

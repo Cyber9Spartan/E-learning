@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  gateway:
+    build: ./backend/gateway
+    ports:
+      - "4000:4000"
+    depends_on:
+      - auth-service
+      - ai-service
+      - analytics-service
+      - course-service
+  auth-service:
+    build: ./backend/services/auth-service
+    ports:
+      - "4001:4001"
+  ai-service:
+    build: ./backend/services/ai-service
+    ports:
+      - "5001:5001"
+  analytics-service:
+    build: ./backend/services/analytics-service
+    ports:
+      - "6001:6001"
+  course-service:
+    build: ./backend/services/course-service
+    ports:
+      - "7001:7001"

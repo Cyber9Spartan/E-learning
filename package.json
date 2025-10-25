@@ -1,0 +1,9 @@
+{
+  "name": "skillhub-pro",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend/*",
+    "backend/services/*"
+  ]
+}
