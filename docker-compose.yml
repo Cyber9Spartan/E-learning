@@ -9,6 +9,7 @@ services:
       - ai-service
       - analytics-service
       - course-service
+      - user-service
   auth-service:
     build: ./backend/services/auth-service
     ports:
@@ -25,3 +26,7 @@ services:
     build: ./backend/services/course-service
     ports:
       - "7001:7001"
+  user-service:
+    build: ./backend/services/user-service
+    ports:
+      - "8080:8080"

@@ -9,6 +9,7 @@ app.use('/auth', createProxyMiddleware({ target: 'http://auth-service:4001', cha
 app.use('/courses', createProxyMiddleware({ target: 'http://course-service:7001', changeOrigin: true, pathRewrite: {'^/courses': ''} }));
 app.use('/ai', createProxyMiddleware({ target: 'http://ai-service:5001', changeOrigin: true, pathRewrite: {'^/ai': ''} }));
 app.use('/analytics', createProxyMiddleware({ target: 'http://analytics-service:6001', changeOrigin: true, pathRewrite: {'^/analytics': ''} }));
+app.use('/users', createProxyMiddleware({ target: 'http://user-service:8080', changeOrigin: true, pathRewrite: {'^/users': ''} }));
 app.use('/rustsvc', createProxyMiddleware({ target: 'http://rust-service:8001', changeOrigin: true, pathRewrite: {'^/rustsvc': ''} }));
 
 app.get('/health', (req,res) => res.json({status: 'gateway ok'}));
