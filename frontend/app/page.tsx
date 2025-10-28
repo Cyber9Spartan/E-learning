@@ -2,9 +2,10 @@
 import { useEffect, useState } from "react";
 import {
   Typography, Card, CardContent, CardMedia,
-  Button, Box, CircularProgress, Rating,
+  Button, Box, CircularProgress, Rating
 } from "@mui/material";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
+// import Grid from '@mui/material/Grid';
 import Link from "next/link";
 
 interface Course {
@@ -34,6 +35,7 @@ export default function Home() {
       </Box>
     );
 
+    
   return (
     <Box>
       <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
