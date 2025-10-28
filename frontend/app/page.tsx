@@ -21,6 +21,8 @@ export default function Home() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true)
 
+
+  
   
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=6")
@@ -29,7 +31,7 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  
+
 
   if (loading)
     return (
