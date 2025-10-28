@@ -19,14 +19,17 @@ interface Course {
 
 export default function Home() {
   const [courses, setCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
 
+  
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=6")
       .then((res) => res.json())
       .then((data) => setCourses(data.products))
       .finally(() => setLoading(false));
   }, []);
+
+  
 
   if (loading)
     return (
